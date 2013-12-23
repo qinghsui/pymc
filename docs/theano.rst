@@ -1,6 +1,3 @@
-
-
-
 Pymc 3 is built around Theano, a computational graph package.  
 
 Random random variables, such as the variable `x` in the example below, are represented by Theano variables with extra information attached, such as the associated prior distribution. The syntax for manipulating Theano variables is quite similar to numpy. Theano variables can be indexed the same way, and there are array functions like `sum` and `exp` for them. All of Theano's functions are available in pymc. 
@@ -25,4 +22,4 @@ multiplying the two together creates a Theano variable that represents taking th
 
 The call to `function` creates an actual function that takes two inputs, a one dimensional numpy array and a zero dimensional numpy array and returns the result of the computation represented by `r`. 
 
-In pymc 3, the user does not directly create theano variables. Instead they are returned when you create a random variable (such as by calling `x = Normal('x', 0,1)`). Likewise, you don't call `function` directly usually (though you can), you let it be automatically called when you use `model.logp`. 
+In pymc 3, the user does not directly create theano variables. Instead they are returned when you create a random variable (such as by calling `x = Normal('x', 0,1)`). Likewise, you don't call `function` directly usually (though you can), it is used automatically by functions like `model.logp`. 
