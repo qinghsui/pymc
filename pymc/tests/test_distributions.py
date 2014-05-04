@@ -310,7 +310,7 @@ def check_mvnormal(n):
 
 def test_multi_mvnormal():
     pymc_matches_scipy(
-            MvNormal, Vector(3, R,n), {'mu': Vector(R,n), 'tau': PdMatrix(n)},
+            MvNormal, Vector(3, R, 3), {'mu': Vector(R, 3), 'tau': PdMatrix(3)},
             normal_logpdf
             )
 
