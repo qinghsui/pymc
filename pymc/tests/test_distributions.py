@@ -308,12 +308,6 @@ def check_mvnormal(n):
             normal_logpdf
             )
 
-def test_multi_mvnormal():
-    pymc_matches_scipy(
-            MvNormal, Vector(3, R, 3), {'mu': Vector(R, 3), 'tau': PdMatrix(3)},
-            normal_logpdf
-            )
-
 def normal_logpdf(value, mu, tau):
     (k,) = value.shape
     return  (-k/2)* np.log(2*np.pi) + .5 * np.log(np.linalg.det(tau)) - .5*(value-mu).dot(tau).dot(value -mu)
